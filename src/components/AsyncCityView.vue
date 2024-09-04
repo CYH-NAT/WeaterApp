@@ -140,14 +140,14 @@ import { useStore } from "@/stores";
 
 const store = useStore()
 
-const myappid = 'c44258b1d2b27f2ae486ad811fc820de'
+const myappid = '2619127e52a02be284bb4712ebc839da'
 const appid   = '7efa332cf48aeb9d2d391a51027f1a71'
 
 const route = useRoute();
 const getWeatherData = async () => {
   try {
     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=${appid}&units=imperial&lang=${store.lang.asyncCity.lang}`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lng}&appid=${myappid}&units=imperial&lang=${store.lang.asyncCity.lang}`
     );
 
     // cal current date & time
